@@ -1,0 +1,35 @@
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.page {
+  background-color: #fff;
+  font-family: Cabinet Grotesk, Arial, sans-serif;
+  max-height: 100%;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.hero {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("src/images/image-background.jpg");
+}
+
+.page_content {
+  width: 100%;
+  margin: 0 auto;
+  min-height: 100vh;
+  /* max-width: 1360px; */
+
+  /* padding: 0 40px; */
+
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}

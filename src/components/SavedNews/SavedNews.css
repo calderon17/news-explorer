@@ -1,0 +1,74 @@
+.saved-page {
+  min-height: 100vh;
+  background: #f5f6f7;
+  padding: 0 0 48px;
+}
+
+.saved-header {
+  max-width: 100%;
+  padding: 40px 104px 56px;
+  margin: 0 auto;
+  padding: 40px 16px 56px 104px;
+  background-color: #fff;
+}
+
+.saved-header__content {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.saved-breadcrumb {
+  margin: 0 0 28px;
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  color: #1a1b2280;
+}
+
+.saved-title {
+  margin: 0 0 30px;
+  font-family: Roboto Slab;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 46px;
+  letter-spacing: 0px;
+}
+
+.saved-subtitle {
+  margin: 0;
+  color: #6b6b6b;
+}
+
+.saved-keywords {
+  color: #1a1b22;
+  margin: 0;
+  font-weight: bold;
+}
+
+.saved-results {
+  /* max-width: 1180px; */
+  margin: 16px auto 0;
+  padding: 62px 106px 62px 102px;
+  justify-content: center;
+}
+.saved-empty {
+  color: #6b6b6b;
+}
+
+.saved-grid {
+  /* list-style: none; */
+
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    400px
+  ); /* this is to control width of cards */
+  gap: 16px;
+  align-items: stretch;
+  grid-auto-flow: row;
+  justify-content: center;
+}

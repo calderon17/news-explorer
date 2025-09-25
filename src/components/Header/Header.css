@@ -1,0 +1,129 @@
+.header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  color: #fff;
+  height: 80px;
+}
+
+.header__saved {
+  background: #fff;
+  color: #000;
+  border-bottom-color: #d1d2d6;
+}
+
+.header__title {
+  font-family: Roboto Slab;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  vertical-align: middle;
+  padding: 0 0 0 104px;
+}
+
+.header__right {
+  margin-left: auto;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: center;
+  vertical-align: middle;
+  gap: 34px;
+}
+
+.header__auth-buttons {
+  gap: 20px;
+  padding: 0 104px 0 0;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+}
+
+.header__saved .header__button-home {
+  color: #000;
+}
+
+.header__button-home {
+  background-color: transparent;
+  width: 68px;
+  height: 80px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  padding: 0px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #b6bcbf;
+}
+
+.header__saved-articles {
+  background-color: transparent;
+  width: 178px;
+  height: 80px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  padding: 0px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #b6bcbf;
+}
+
+.header__button-sign-in {
+  background-color: transparent;
+  width: 176px;
+  height: 48px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255);
+  padding: 0px;
+  color: #fff;
+  cursor: pointer;
+  margin: auto;
+}
+
+.header__button-sign-out {
+  display: flex;
+  background-color: transparent;
+  width: 100px;
+  height: 48px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255);
+  padding: 0px;
+  color: #fff;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 16px;
+  margin: auto;
+}
+
+.header__saved .header__button-sign-out {
+  border: 1px solid rgba(0, 0, 0);
+  color: #000;
+}
+
+.Header__user {
+  margin: auto;
+}
+
+.header__navlink_active {
+  border-bottom: 3px solid rgba(255, 255, 255);
+  color: #fff;
+}
+
+.header__saved .header__navlink_active {
+  border-bottom: 3px solid rgba(0, 0, 0);
+  color: #000;
+}
