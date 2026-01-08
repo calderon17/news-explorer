@@ -39,3 +39,20 @@
 .footer__github {
   padding: 0 24px 0 0;
 }
+
+
+@media (min-width: 768px) and (max-width: 1230px) {
+.footer__left {
+  padding: 0 0 0 40px;
+}
+
+.footer__right {
+  padding: 0 20px 0 0;
+}
+
+}
+
+
+@media  screen and (max-width: 767px) {
+ 
+}

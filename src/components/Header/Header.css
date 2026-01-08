@@ -48,6 +48,8 @@
   color: #000;
 }
 
+
+
 .header__button-home {
   background-color: transparent;
   width: 68px;
@@ -126,4 +128,37 @@
 .header__saved .header__navlink_active {
   border-bottom: 3px solid rgba(0, 0, 0);
   color: #000;
+}
+
+
+@media (min-width: 768px) and (max-width: 1230px) {
+ .header {
+  height: 66px;
+}
+ 
+.header__title {
+  top: 22.73px;
+  padding: 0 0 0 40px;
+}
+.header__button-home {
+  height: 66px;
+}
+
+.header__button-sign-in {
+  width: 152px;
+  height: 40px;
+}
+
+.header__auth-buttons {
+  gap: 20px;
+  padding: 0 40px 0 0;
+}
+
+
+
+}
+
+
+@media (max-width: 767px) {
+  
 }
