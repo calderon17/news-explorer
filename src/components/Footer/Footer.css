@@ -32,6 +32,11 @@
   gap: 40px;
 }
 
+.footer__right-icons {
+  display: flex;
+  align-items: center;
+}
+
 .footer__tripleten {
   padding: 0 40px 0 0;
 }
@@ -54,5 +59,44 @@
 
 
 @media  screen and (max-width: 767px) {
- 
+ .footer {
+  max-height: none;
+  padding: 20px;
+ }
+ .footer__content {
+  flex-direction: column-reverse;
+  align-items: flex-start;
+  padding: 0 16px;
+ }
+
+ .footer__right {
+    margin-left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between; 
+    margin-bottom: 30px;
+    max-height: 74px;
+    padding: 0px;
+ }
+
+ .footer__right-text {
+    display: flex;
+    flex-direction: column; 
+    gap: 10px;
+    max-width: 200px;
+    max-height: 74px;
+  }
+
+  .footer__right-icons {
+  display: block;
+}
+
+  .footer__left {
+    padding: 0; 
+    width: 100%;
+  }
+
+  .footer__github {
+    padding-right: 24px;
+  }
 }

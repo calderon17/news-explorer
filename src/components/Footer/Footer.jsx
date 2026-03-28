@@ -18,8 +18,10 @@ function Footer({}) {
               <p className="footer__Home">Home</p>
               <p className="footer__tripleten">TripleTen</p>
             </div>
+            <div className="footer__right-icons">
             <img src={github} alt="github" className="footer__github" />
             <img src={facebook} alt="facebook" className="footer__facebook" />
+            </div>
           </div>
         </div>
       </footer>

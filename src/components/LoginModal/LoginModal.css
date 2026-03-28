@@ -18,11 +18,19 @@
   font-size: 12px;
   line-height: 15px;
   color: #ff0000;
-  position: absolute;
+  position: static;
   top: calc(100% + 5px);
   left: 0;
 }
 
 .modal__label {
   position: relative;
+}
+
+@media (max-width: 767px) {
+  .modal__content_type_signin {
+    height: calc(100vh - 56px) !important;
+    max-height: none !important;
+    padding: 16px;
+  }
 }

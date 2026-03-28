@@ -159,8 +159,8 @@
 } */
 
 .main__results-title {
-  width: 712;
-  height: 46;
+  width: 712px;
+  height: 46px;
   opacity: 1;
   top: 656px;
   left: 102px;
@@ -185,6 +185,55 @@
     grid-auto-rows: minmax(auto, 576px);
 }
 
+
+
+.main__results-empty {
+  display: grid;
+  text-align: center;
+  justify-content: center;
+}
+
+.main__notfound {
+  margin: auto;
+}
+
+.main__results-subtitle {
+  color: #b6bcbf;
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: center;
+  margin: 0;
+}
+
+.main__results-error {
+  color: whitesmoke;
+}
+
+.main__show-more {
+  width: 288px;
+  height: 64px;
+  color: #1a1b22;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  padding: 0;
+  background-color: #ffffff;
+  border-radius: 50px;
+  border: none;
+  margin: auto;
+  display: block;
+  cursor: pointer;
+}
+
+.main__show-more:hover {
+  background-color: #e8e8e8;
+}
+
+
+
 @media (min-width: 768px) and (max-width: 1230px) {
   .main__cards-grid {
     grid-template-columns: repeat(3, 224px);
@@ -196,7 +245,6 @@
   .main__search {
   height: 334px;
 }
-
 
   .main__search_title {
   font-size: 36px;
@@ -251,47 +299,71 @@
     gap: 8px;
     margin: 0 0 32px;
   }
+
+  .main__author {
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
 }
 
-
-
-.main__results-empty {
-  display: grid;
-  text-align: center;
+.main__author-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 56px;
   justify-content: center;
 }
 
-.main__notfound {
-  margin: auto;
+
+.main__title_author {
+  max-width: 288px;
+  max-height: 40px;
+  font-weight: 40px;
+  font-size: 30px;
+  line-height: 40px;
 }
 
-.main__results-subtitle {
-  color: #b6bcbf;
-  font-family: Roboto;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 24px;
-  letter-spacing: 0px;
-  text-align: center;
-  margin: 0;
+
+.main__author_img {
+  width: 272px;
+  height: 272px;
 }
 
-.main__results-error {
-  color: whitesmoke;
+ .main__search {
+  max-height: 480px;
+}
+
+
+.main__search_title {
+  font-size: 36px;
+  line-height: 40px;
+  max-width: 285px; 
+  /* max-height: 80px;   */
+  padding: 30px 0 0;
 }
 
 .main__show-more {
   width: 288px;
-  height: 64px;
-  color: #1a1b22;
-  top: 0;
-  right: 0;
-  z-index: 1;
-  padding: 0;
-  background-color: #e8e8e8;
-  border-radius: 50px;
-  border: none;
-  margin: auto;
-  display: block;
-  cursor: pointer;
+  height: 56px;
+}
+
+.main__results {
+  padding: 0 0 24px;
+  background-color: #f5f6f7;
+}
+
+.main__results-title {
+  max-width: 288px;
+  height: 46px;
+  margin: 0;
+  /* padding: 32px 0 32px; */
+}
+
+
+.main__subtitle {
+  max-width: 288px;
+  max-height: 34px;
+}
 }

@@ -130,6 +130,10 @@
   color: #000;
 }
 
+  .header__menu-button {
+    display: none;
+  }
+
 
 @media (min-width: 768px) and (max-width: 1230px) {
  .header {
@@ -152,13 +156,220 @@
 .header__auth-buttons {
   gap: 20px;
   padding: 0 40px 0 0;
+  height: 66px;
+
+}
+
+.header__saved-articles {
+  height: 66px;
 }
 
 
 
 }
-
 
 @media (max-width: 767px) {
-  
+  .header {
+    height: 56px;
+    position: relative;
+    padding: 0 16px;
+    justify-content: space-between;
+    transition: background-color 0.3s ease;
+  }
+
+  .header.header_menu-open {
+    background-color: #1a1b22 !important; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    border-bottom: none;
+    height: 56px; 
+  }
+
+  .header.header_menu-open::after {
+    content: "";
+    position: fixed;
+    top: 56px; 
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 90; 
+  }
+
+  .header__title {
+    padding: 0; 
+  }
+
+  .header__right {
+    display: none; 
+  }
+
+  .header__right_mobile-visible {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 56px; 
+    left: 0;
+    width: 100%;
+    background-color: #1a1b22; 
+    padding: 16px 0 24px;
+    z-index: 101; 
+  }
+
+  .header__auth-buttons {
+    flex-direction: column;
+    padding: 0 16px;
+    width: 100%;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .header__menu-button {
+    width: 24px;
+    height: 24px;
+    background: url("../../images/menu.svg") no-repeat center; 
+    border: none;
+    cursor: pointer;
+    display: block;
+    margin: 0; 
+  }
+
+  .header__menu-button_close {
+    background: url("../../images/close.svg") no-repeat center !important;
+  }
+
+  .header__menu-button_black {
+    background: url("../../images/menu-black.svg") no-repeat center;
+  }
+
+  .header__button-home, 
+  .header__saved-articles {
+    height: auto;
+    width: auto;
+    color: #fff !important;
+    padding: 10px 0;
+    border-bottom: none; 
+  }
+
+  .header__button-sign-in, 
+  .header__button-sign-out {
+    width: 100%;
+    margin-top: 10px;
+  }
 }
+
+
+/* @media (max-width: 767px) { */
+  /* .header {
+    height: 56px;
+    position: relative;
+
+  }
+
+
+  .header__container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 16px;
+    align-items: center;
+    background: inherit; 
+  }
+
+  .header__right {
+    display: none; 
+    position: absolute;
+    top: 56px;
+    left: 0;
+    width: 100%;
+    background-color: #1a1b22; 
+    padding: 16px 0;
+  }
+
+  .header__right_mobile-visible {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 56px; 
+    left: 0;
+    width: 100%;
+    background-color: #1a1b22; 
+    padding: 16px 0 24px;
+    z-index: 101;
+  }
+  
+
+  .header__auth-buttons {
+    flex-direction: column;
+    padding: 0 16px;
+    width: 100%;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+ .header__menu-button {
+    width: 24px;
+    height: 24px;
+    background: url("../../images/menu.svg") no-repeat center; 
+    margin: 0 16px 0 auto; 
+    border: none;
+    cursor: pointer;
+    display: block;
+  }
+
+ .header__menu-button_close {
+    background: url("../../images/close.svg") no-repeat center;
+  }
+
+  .header__menu-button_black {
+    background: url("../../images/menu-black.svg") no-repeat center;
+  }
+
+
+  .header__button-home, .header__saved-articles {
+    height: auto;
+    width: auto;
+    color: #fff !important;
+    padding: 10px 0;
+    height: 66px;
+  }
+
+  .header__button-sign-in, .header__button-sign-out {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .header_menu-open {
+    background-color: #1a1b22; 
+    position: fixed; 
+    z-index: 100;
+  }
+
+ .header.header_menu-open {
+    background-color: #1a1b22 ; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    border-bottom: none;
+  }
+
+  .header_menu-open::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1; 
+  }
+
+  .header_menu-open .header__title {
+    color: #fff;
+  } 
+} */

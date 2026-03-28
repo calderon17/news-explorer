@@ -3,3 +3,11 @@
   max-height: 457px;
   padding: 34px 35px 28px;
 }
+
+@media (max-width: 767px) {
+  .modal__content_type_signup {
+    height: calc(100vh - 56px);
+    max-height: none;
+    padding: 16px;
+  }
+}

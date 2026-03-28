@@ -167,3 +167,63 @@
   background-color: #000000;
   color: white;
 }
+
+
+@media (max-width: 767px) {
+.modal.modal__opened {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+
+  }
+
+
+.modal__content {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 20px 20px 0 0;
+  overflow: visible;
+  padding: 20px;
+  bottom: 0;
+  margin-bottom: 0;
+  /* display: flex;
+  flex-direction: column;
+  position: relative; */
+
+   /* ^^^^^^^^^^this makes the sign in centered  */
+}
+
+.modal__title {
+    margin: 16px 0 22px; 
+    text-align: left;
+    width: 100%;
+    font-size: 24px;
+}
+
+.modal__label {
+  margin: 0 auto 30px;
+  color: #2f71e5;
+  width: 288px;
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+}
+
+.modal__submit {
+  width: 288px;
+}
+
+.modal__close {
+top: -56px;
+right: 16px;
+}
+.modal__close-img {
+  width: 25px;
+height: 25px;
+}
+}
