@@ -1,7 +1,8 @@
 import "./SavedNews.css";
+import { Navigate } from "react-router-dom";
 import NewsCard from "../NewsCard/NewsCard";
-import CurrentUserContext from "../../contexts/CurrentUserContext";
-import React, { useMemo, useContext } from "react";
+
+
 
 function SavedNews({
   savedArticles = [],
@@ -9,6 +10,9 @@ function SavedNews({
   onToggleSave,
   currentUser,
 }) {
+
+  if (!isLoggedIn) return <Navigate to="/" />;
+
   const name = currentUser?.username || currentUser?.name || "User";
   const count = savedArticles.length;
 

@@ -1,4 +1,3 @@
-import React from "react";
 import "./Main.css";
 import me from "../../images/me.jpg";
 import SearchForm from "../SearchForm/SearchForm";
@@ -18,7 +17,6 @@ function Main({
   isLoggedIn,
   savedArticles = [],
   onToggleSave,
-  handleSaveArticle,
 }) {
   return (
     <main className="main">

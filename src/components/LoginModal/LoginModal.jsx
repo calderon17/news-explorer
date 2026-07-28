@@ -1,6 +1,6 @@
 import "./LoginModal.css";
-import ModalWithForm from "../ModalWithForm/ModalWithform";
 import { useState, useEffect } from "react";
+import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import { authenticateUser } from "../../data/users";
 
 export default function LoginModal({
@@ -20,7 +20,7 @@ export default function LoginModal({
   // using parent errowhen provided, else local
   const errorMessage = externalError || localError;
 
-  ////////////////// Handlers ///////////
+  /// /////////////// Handlers ///////////
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -44,7 +44,7 @@ export default function LoginModal({
     }
   };
 
-  ///////// useEffect ///////////
+  /// ////// useEffect ///////////
   useEffect(() => {
     if (isOpen) {
       setEmail("");

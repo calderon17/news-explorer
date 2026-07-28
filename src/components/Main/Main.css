@@ -169,6 +169,8 @@
   font-size: 40px;
   line-height: 46px;
   letter-spacing: 0px;
+  margin: 0 0 64px;
+
 }
 
 .main__cards-grid {
@@ -258,7 +260,11 @@
   background-color: #f5f6f7;
 }
 
-
+.main__results-title {
+  max-width: 385px;
+  height: 46px;
+  margin: 0 0 32px;
+}
 
 .main__subtitle {
   max-width: 452px;
@@ -350,7 +356,7 @@
 }
 
 .main__results {
-  padding: 0 0 24px;
+  padding: 0 16px 24px;
   background-color: #f5f6f7;
 }
 
@@ -358,7 +364,7 @@
   max-width: 288px;
   height: 46px;
   margin: 0;
-  /* padding: 32px 0 32px; */
+  padding: 32px 0 58px;
 }
 
 

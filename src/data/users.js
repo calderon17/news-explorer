@@ -53,7 +53,7 @@ export function registerUser({ email, password, username }) {
   if (exists) return { ok: false, error: "Email already exists" };
 
   const user = {
-    id: "u_" + Date.now().toString(36),
+    id: `u_${  Date.now().toString(36)}`,
     email,
     password,
     username: username?.trim() || "user",

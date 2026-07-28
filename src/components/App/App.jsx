@@ -2,10 +2,10 @@ import { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import { fetchNews } from "../../utils/newsApi.js";
 
-import "../App/App.css";
-import Header from "..//Header/Header";
-import Main from "..//Main/Main";
-import Footer from "..//Footer/Footer";
+import "./App.css";
+import Header from "../Header/Header";
+import Main from "../Main/Main";
+import Footer from "../Footer/Footer";
 import {
   authorize,
   checkToken,
@@ -18,24 +18,24 @@ import {
   saveArticle,
   deleteArticle,
 } from "../../utils/api.js";
-import RegisterModal from "..//RegisterModal/RegisterModal";
+import RegisterModal from "../RegisterModal/RegisterModal";
 import LoginModal from "../LoginModal/LoginModal";
 import CurrentUserContext from "../../contexts/CurrentUserContext.jsx";
 import SavedNews from "../SavedNews/SavedNews.jsx";
 
-import { registerUser, authenticateUser } from "..//..//data/users";
+import { registerUser, authenticateUser } from "../../data/users";
 
 function App() {
   // UI state
   const [activeModal, setActiveModal] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  //Auth state
+  // Auth state
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
   const [loginError, setLoginError] = useState("");
 
-  //Search state
+  // Search state
   const [savedArticles, setSavedArticles] = useState([]);
   const [articles, setArticles] = useState([]);
   const [isSearching, setIsSearching] = useState(false);

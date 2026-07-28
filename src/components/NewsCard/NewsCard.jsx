@@ -1,7 +1,5 @@
-import React from "react";
 import "./NewsCard.css";
 import Save from "../../images/save.svg";
-import Savehover from "../../images/save-hover.svg";
 import Savefilled from "../../images/save-filled.svg";
 
 function NewsCard({ article, isLoggedIn, isSaved, onToggleSave }) {
@@ -71,7 +69,7 @@ function NewsCard({ article, isLoggedIn, isSaved, onToggleSave }) {
         <h3 className="news-card__title">{title}</h3>
         <p className="news-card__description">
           {description && description.length > 120
-            ? description.slice(0, 120) + "..."
+            ? `${description.slice(0, 120)  }...`
             : description}
         </p>
         <p className="news-card__author">{author || source?.name}</p>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "../SearchForm/SearchForm.css";
+import "./SearchForm.css";
 
 export default function SearchForm({ onSearch }) {
   const [keyword, setKeyword] = useState("");

@@ -15,6 +15,11 @@
   margin: auto 0 0 0;
 }
 
+.footer .container {
+  display: flex;
+  width: 100%;
+}
+
 .footer__left {
   color: #b6bcbf;
   padding: 0 0 0 104px;
@@ -39,6 +44,13 @@
 
 .footer__tripleten {
   padding: 0 40px 0 0;
+  text-decoration: none;
+  color: #000;
+}
+
+.footer__Home {
+  text-decoration: none;
+  color: #000;
 }
 
 .footer__github {

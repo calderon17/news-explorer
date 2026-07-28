@@ -1,11 +1,11 @@
 import "./RegisterModal.css";
-import ModalWithForm from "../ModalWithForm/ModalWithform";
 import { useState, useEffect } from "react";
+import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
 export default function RegisterModal({
   onClose,
   isOpen,
-  //   onRegister,
+  // onRegister,
   onSwitchModal,
 }) {
   const [errorMessage, setErrorMessage] = useState("");
@@ -24,7 +24,7 @@ export default function RegisterModal({
           className="modal__submit-switch"
           onClick={onSwitchModal}
         >
-          or <span class="highlight">log in</span>
+          or <span className="highlight">log in</span>
         </button>
       }
     >
