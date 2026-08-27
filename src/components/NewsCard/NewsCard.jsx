@@ -30,6 +30,11 @@ function NewsCard({ article, isLoggedIn, isSaved, onToggleSave }) {
     onToggleSave?.(article);
   };
 
+  let saveTitle = "Sign in to save articles";
+  if (isLoggedIn) {
+    saveTitle = isSaved ? "Remove from saved" : "Save article";
+  }
+
   return (
     <li className="news-card">
       <a
@@ -44,13 +49,7 @@ function NewsCard({ article, isLoggedIn, isSaved, onToggleSave }) {
             className={`news-card__save ${
               isSaved ? "news-card__save_active" : ""
             } ${!isLoggedIn ? "news-card__save_disabled" : ""}`}
-            title={
-              isLoggedIn
-                ? isSaved
-                  ? "Remove from saved"
-                  : "Save article"
-                : "Sign in to save articles"
-            }
+            title={saveTitle}
             onClick={handleSaveClick}
             disabled={!isLoggedIn}
           >

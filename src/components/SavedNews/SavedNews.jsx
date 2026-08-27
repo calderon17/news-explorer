@@ -16,15 +16,9 @@ function SavedNews({
   const name = currentUser?.username || currentUser?.name || "User";
   const count = savedArticles.length;
 
-  const uniq = Array.from(
+   const uniqKeywords = Array.from(
     new Set(savedArticles.map((a) => (a.keyword || "").trim()).filter(Boolean))
   );
-
-  const uniqKeywords = [];
-  for (const a of savedArticles) {
-    const k = (a.keyword || "").trim();
-    if (k && !uniqKeywords.includes(k)) uniqKeywords.push(k);
-  }
 
   let keywordLine = "";
   if (uniqKeywords.length === 1) {
@@ -37,6 +31,7 @@ function SavedNews({
       uniqKeywords[1]
     }, and ${others} other${others > 1 ? "s" : ""}`;
   }
+
 
   return (
     <main className="saved-page">
@@ -51,7 +46,7 @@ function SavedNews({
 
       <section className="saved-results">
         {count === 0 ? (
-          <div className="saved-empty">You haven't saved any articles yet.</div>
+          <div className="saved-empty">You haven&apos;t saved any articles yet.</div>
         ) : (
           <ul className="saved-grid">
             {savedArticles.map((article, i) => (

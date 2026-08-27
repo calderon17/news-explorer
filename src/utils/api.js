@@ -16,6 +16,14 @@ export function getSavedArticles() {
   return Promise.resolve(read().slice());
 }
 
+function cryptoRandomId() {
+  if (typeof crypto !== "undefined" && crypto.randomUUID)
+    return crypto.randomUUID();
+  return `id_${  Math.random().toString(36).slice(2, 10)}`;
+}
+
+
+
 export function saveArticle(article, keyword = "") {
   const list = read();
 
@@ -49,8 +57,3 @@ export function deleteArticle(idOrUrl) {
   return Promise.resolve({ ok: true });
 }
 
-function cryptoRandomId() {
-  if (typeof crypto !== "undefined" && crypto.randomUUID)
-    return crypto.randomUUID();
-  return `id_${  Math.random().toString(36).slice(2, 10)}`;
-}

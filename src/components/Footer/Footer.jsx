@@ -2,7 +2,7 @@ import "./Footer.css";
 import github from "../../images/github.svg";
 import facebook from "../../images/facebook.svg";
 
-function Footer({}) {
+function Footer() {
   return (
       <footer className="footer">
         <div className="container">

@@ -8,7 +8,10 @@ export function authorize(email, password) {
 
 export function checkToken(token) {
   return new Promise((resolve, reject) => {
-    if (!token) return reject(new Error("No token"));
+    if (!token) {
+       reject(new Error("No token"));
+       return;
+    }
     resolve({
       data: { _id: "fake-id", username: "DemoUser", email: "demo@example.com" },
     });

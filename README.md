@@ -1,86 +1,142 @@
-📰 News Explorer
+# 📰 News Explorer
 
-A responsive React + Vite web application that allows users to explore news articles, save favorites, and manage their profiles. Built as part of the TripleTen Software Engineering Bootcamp, this project demonstrates full-stack integration, API consumption, and clean front-end design practices.
+A responsive React + Vite application for searching news articles and saving
+favorites. Built as part of the TripleTen Software Engineering Bootcamp.
 
-🚀 Features
+---
 
-🔐 User Authentication
+## 🔑 Test credentials
 
-Register, log in, and log out securely
+Authentication currently runs against a local mock user store (`src/data/users.js`),
+seeded into `localStorage` on first load. Use any of these accounts to sign in:
 
-Persistent session handling with tokens
+| Email | Password | Username |
+|---|---|---|
+| `manu@example.com` | `pass123` | manu |
+| `matt@example.com` | `matt123` | matt |
+| `eli@example.com` | `eli123` | elivivas |
 
-📰 News Search & Display
+Signing in unlocks the **Saved articles** page at `/saved-news`.
 
-Fetches news articles from an external API
+> If sign-in behaves unexpectedly, clear the `ne_users_v1` and `ne_current_user`
+> keys in DevTools → Application → Local Storage, then reload.
 
-Displays results as interactive news cards
+---
 
-❤️ Save & Manage Articles
+## 🚀 Features
 
-Like and save favorite articles
+**News search**
 
-Delete saved cards from your collection
+- Queries the News API and renders results as cards
+- Loading state via a `Preloader` component
+- "Show more" pagination, three cards at a time
+- Empty-state and error messaging when a search returns nothing
 
-👤 User Profile
+**Authentication**
 
-View and update personal profile information
+- Sign in / sign out against the mock user store
+- Session persisted in `localStorage`, restored on reload
+- Current user shared across the tree via React Context
 
-Update avatar image
+**Saved articles**
 
-📱 Responsive Design
+- Save and remove articles from the results list
+- Protected `/saved-news` route — redirects to home when signed out
+- Keyword summary derived from the saved set
 
-Optimized for desktop, tablet, and mobile devices
+**Responsive layout**
 
-Clean UI with CSS modules and custom fonts
+- Desktop, tablet, and mobile breakpoints
+- Custom fonts loaded with `@font-face`
 
-🛠️ Tech Stack
+---
 
-Frontend: React (with Vite bundler)
+## 🛠️ Tech stack
 
-Language: JavaScript (ES6+)
+- **Frontend:** React 18, Vite 5
+- **Routing:** React Router 6
+- **Language:** JavaScript (ES2020+)
+- **Styling:** plain CSS per component, `normalize.css`
+- **Fonts:** Inter, Roboto, Roboto Slab (self-hosted `.woff2` / `.woff`)
+- **Linting:** ESLint (Airbnb base + React plugins) with Prettier
 
-Styling: CSS Modules, custom fonts (Cabinet Grotesk, Roboto Slab)
+---
 
-API Handling: Fetch API with res.ok and error handling
+## 📂 Project structure
 
-Version Control: Git & GitHub
-
-📂 Project Structure
-News-Explorer/
+```
+news-explorer/
+├── public/
 ├── src/
-│ ├── components/
-│ │ ├── App.jsx
-│ │ ├── Main.jsx
-│ │ ├── NewsCard.jsx
-│ │ └── ...
-│ ├── assets/
-│ │ ├── images/
-│ │ └── fonts/
-│ ├── styles/
-│ │ └── \*.module.css
-│ ├── index.jsx
-│ └── api.js
-├── package.json
-└── README.md
+│   ├── components/          # one folder per component: .jsx + .css
+│   │   ├── About/
+│   │   ├── App/
+│   │   ├── Footer/
+│   │   ├── Header/
+│   │   ├── LoginModal/
+│   │   ├── Main/
+│   │   ├── ModalWithForm/
+│   │   ├── Navigation/
+│   │   ├── NewsCard/
+│   │   ├── Preloader/
+│   │   ├── RegisterModal/
+│   │   ├── SavedNews/
+│   │   └── SearchForm/
+│   ├── contexts/
+│   │   └── CurrentUserContext.jsx
+│   ├── data/
+│   │   └── users.js         # mock user store
+│   ├── images/
+│   ├── utils/
+│   │   ├── api.js           # saved-articles operations
+│   │   ├── auth.js          # token helpers (stubbed for Stage 1)
+│   │   └── newsApi.js       # News API client
+│   ├── vendor/
+│   │   ├── fonts/           # .woff2 / .woff
+│   │   ├── fonts.css        # @font-face declarations
+│   │   └── normalize.css
+│   ├── index.css
+│   └── main.jsx
+├── index.html
+├── vite.config.js
+└── package.json
+```
 
-⚡ Getting Started
+---
+
+## ⚡ Getting started
 
 Clone the repository:
 
-git clone https://github.com/your-username/news-explorer.git
+```bash
+git clone https://github.com/calderon17/news-explorer.git
 cd news-explorer
+```
 
 Install dependencies:
 
+```bash
 npm install
+```
 
-Run the development server:
+Run the development server (opens on `http://localhost:3000`):
 
+```bash
 npm run dev
+```
 
-Build for production:
+Other scripts:
 
-npm run build
+```bash
+npm run build     # production build
+npm run preview   # serve the production build locally
+npm run lint      # ESLint across the project
+```
 
-test for github
+---
+
+## 📌 Notes
+
+- `src/utils/auth.js` contains stubbed token helpers that stand in for a real
+  backend. They are wired for Stage 2, when the API replaces the mock store.
+- News results come from the News API; search terms are passed straight through.

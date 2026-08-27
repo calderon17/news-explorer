@@ -1,5 +1,5 @@
 import "./RegisterModal.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
 export default function RegisterModal({

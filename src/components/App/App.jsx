@@ -6,13 +6,7 @@ import "./App.css";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
-import {
-  authorize,
-  checkToken,
-  saveToken,
-  getToken,
-  removeToken,
-} from "../../utils/auth.js";
+
 import {
   getSavedArticles,
   saveArticle,
@@ -54,7 +48,13 @@ function App() {
         setIsLoggedIn(true);
         setCurrentUser(user);
       }
-    } catch {}
+    } catch { localStorage.removeItem("ne_current_user"); }
+  }, []);
+
+  useEffect(() => {
+    getSavedArticles()
+      .then(setSavedArticles)
+      .catch(() => setSavedArticles([]));
   }, []);
 
   // Modal Controls
@@ -78,7 +78,8 @@ function App() {
         setCurrentUser(null);
         setLoginError(result.error || "Incorrect email or password");
         setIsLoading(false);
-        return reject(new Error(result.error || "Login failed"));
+        reject(new Error(result.error || "Login failed"));
+        return;
       }
 
       setIsLoggedIn(true);
@@ -98,7 +99,8 @@ function App() {
       const result = registerUser({ email, password, username });
       if (!result.ok) {
         setIsLoading(false);
-        return reject(new Error(result.error || "Registration failed"));
+        reject(new Error(result.error || "Registration failed"));
+        return;
       }
 
       setIsLoggedIn(true);
@@ -119,7 +121,6 @@ function App() {
   async function handleSearch(query) {
     try {
       setCurrentSearchTerm(query);
-      console.log("Search results:", articles);
       setIsSearching(true);
       setSearchError("");
       setHasSearched(true);
@@ -156,15 +157,15 @@ function App() {
     }
   }
 
-  function handleSaveArticle(article) {
-    const alreadySaved = savedArticles.some((a) => a.title === article.title);
+  // function handleSaveArticle(article) {
+  //   const alreadySaved = savedArticles.some((a) => a.title === article.title);
 
-    if (alreadySaved) {
-      setSavedArticles((prev) => prev.filter((a) => a.title !== article.title));
-    } else {
-      setSavedArticles((prev) => [...prev, article]);
-    }
-  }
+  //   if (alreadySaved) {
+  //     setSavedArticles((prev) => prev.filter((a) => a.title !== article.title));
+  //   } else {
+  //     setSavedArticles((prev) => [...prev, article]);
+  //   }
+  // }
 
   // const handleLogin = ({ email, password }) => {
   //   return login({ email, password })

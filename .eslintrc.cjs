@@ -19,6 +19,12 @@ module.exports = {
   },
   plugins: ["react-refresh"],
   rules: {
+    "no-underscore-dangle": ["error", { allow: ["_id"] }],
+    "import/prefer-default-export": "off",
+    "import/no-extraneous-dependencies": [
+      "error",
+      { devDependencies: ["vite.config.js", "**/*.config.js"] },
+    ],
     "react/jsx-no-target-blank": "off",
     "react/prop-types": "off",
     "import/extensions": "off",
