@@ -1,0 +1,68 @@
+import "./SavedNews.css";
+import { Navigate } from "react-router-dom";
+import NewsCard from "../NewsCard/NewsCard";
+
+
+
+function SavedNews({
+  savedArticles = [],
+  isLoggedIn,
+  onToggleSave,
+  currentUser,
+}) {
+
+  if (!isLoggedIn) return <Navigate to="/" />;
+
+  const name = currentUser?.username || currentUser?.name || "User";
+  const count = savedArticles.length;
+
+   const uniqKeywords = Array.from(
+    new Set(savedArticles.map((a) => (a.keyword || "").trim()).filter(Boolean))
+  );
+
+  let keywordLine = "";
+  if (uniqKeywords.length === 1) {
+    keywordLine = `By keywords: ${uniqKeywords[0]}`;
+  } else if (uniqKeywords.length === 2) {
+    keywordLine = `By keywords: ${uniqKeywords[0]}, ${uniqKeywords[1]}`;
+  } else if (uniqKeywords.length > 2) {
+    const others = uniqKeywords.length - 2;
+    keywordLine = `By keywords: ${uniqKeywords[0]}, ${
+      uniqKeywords[1]
+    }, and ${others} other${others > 1 ? "s" : ""}`;
+  }
+
+
+  return (
+    <main className="saved-page">
+      <section className="saved-header">
+        <p className="saved-breadcrumb">Saved articles</p>
+        <h1 className="saved-title">
+          {name}, you have {count} saved{" "}
+          <div>{count === 1 ? "article" : "articles"}</div>
+        </h1>
+        {keywordLine && <p className="saved-keywords">{keywordLine}</p>}
+      </section>
+
+      <section className="saved-results">
+        {count === 0 ? (
+          <div className="saved-empty">You haven&apos;t saved any articles yet.</div>
+        ) : (
+          <ul className="saved-grid">
+            {savedArticles.map((article, i) => (
+              <NewsCard
+                key={article.url || article.title || i}
+                article={article}
+                isLoggedIn={isLoggedIn}
+                isSaved={true}
+                onToggleSave={onToggleSave}
+              />
+            ))}
+          </ul>
+        )}
+      </section>
+    </main>
+  );
+}
+
+export default SavedNews;
