@@ -1,5 +1,7 @@
 const TOKEN_KEY = "jwt";
 
+// TODO: replace with a real API fetch in Stage 2
+// eslint-disable-next-line no-unused-vars
 export function authorize(email, password) {
   return new Promise((resolve) => {
     resolve({ token: "fake-dev-token" });

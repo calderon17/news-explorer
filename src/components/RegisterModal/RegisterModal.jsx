@@ -1,23 +1,47 @@
 import "./RegisterModal.css";
-import { useState } from "react";
+import { useState , useEffect} from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
+
 
 export default function RegisterModal({
   onClose,
   isOpen,
-  // onRegister,
+  onRegister,
   onSwitchModal,
+  isLoading = false
 }) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+
+  useEffect(() => {
+    if (isOpen) {
+      setEmail("");
+      setPassword("");
+      setUsername("");
+      setErrorMessage("");
+    }
+  }, [isOpen]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setErrorMessage("");
+    try {
+      await onRegister({ email, password, username });
+    } catch (err) {
+      setErrorMessage(err.message || "Registration failed. Please try again.");
+    }
+  };
 
   return (
     <ModalWithForm
       title="Sign up"
-      buttonText="Sign up"
+      buttonText={isLoading ? "Signing up..." : "Sign up"}
       modalType="signup"
       onClose={onClose}
       isOpen={isOpen}
-      //   onSubmit={handleSubmit}
+      onSubmit={handleSubmit}
       switchButton={
         <button
           type="button"
@@ -40,6 +64,8 @@ export default function RegisterModal({
           className="modal__input"
           id="register-email"
           placeholder="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           required
         />
       </label>
@@ -51,7 +77,9 @@ export default function RegisterModal({
           className="modal__input"
           id="register-password"
           placeholder="password"
-          autoComplete="username"
+          autoComplete="new-password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
           required
         />
       </label>
@@ -63,6 +91,8 @@ export default function RegisterModal({
           className="modal__input"
           id="register-name"
           placeholder="Name"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
           required
         />
       </label>
